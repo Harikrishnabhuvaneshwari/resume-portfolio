@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hari Krishna Prakash | Technical Portfolio</title>
+    <meta
+      name="description"
+      content="Technical portfolio and resume website for Hari Krishna Prakash."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand">HARI.dev</a>
+        <nav>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <section class="hero reveal">
+        <p class="kicker">Senior Applications Engineer | Technical Portfolio</p>
+        <h1>Hari Krishna Prakash</h1>
+        <p class="lede">
+          Senior backend engineer with 10+ years of experience delivering distributed systems,
+          production-grade platform integrations, and resilient multi-cloud services across
+          fintech and digital commerce domains.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="swing-analysis.html">Read Case Study</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+        <ul class="meta-list">
+          <li><span>Location</span><strong>Tokyo, Japan</strong></li>
+          <li>
+            <span>Email</span>
+            <a href="mailto:harikrishnabhuvaneshwari@yahoo.com">harikrishnabhuvaneshwari@yahoo.com</a>
+          </li>
+          <li>
+            <span>GitHub</span>
+            <a href="https://github.com/Harikrishnabhuvaneshwari" target="_blank" rel="noopener">github.com/Harikrishnabhuvaneshwari</a>
+          </li>
+          <li>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/harikrishnaprakash/" target="_blank" rel="noopener">linkedin.com/in/harikrishnaprakash</a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience" class="section reveal">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>Ownership-focused timeline with technical and delivery outcomes.</p>
+        </div>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Applications Engineer</h3>
+            <p>Rakuten Group</p>
+            <time>Feb 2024 - Present</time>
+          </div>
+          <ul>
+            <li>Delivered a production-grade Swing Analysis capability in the Rakuten GORA app by owning the backend platform that ingests user videos, orchestrates analysis requests to the ML team's multi-model pipeline, and returns results through resilient multi-cloud services.</li>
+            <li>Engineered multi-cloud resiliency with Azure Front Door and load-balancing across AKS and Rakuten One Cloud routing paths.</li>
+            <li>Managed controlled releases through manually triggered Argo Workflows (revision/image parameters), shared values.yaml updates, Argo CD syncs, and Helm chart customization; maintained 100% release reliability with multiple milestones delivered ahead of schedule.</li>
+            <li>Integrated a C-based FFmpeg/JPEG media processing pipeline wrapped in Java for video analysis and frame extraction, sustaining 10k+ videos with ~99% valid-input success and reducing average processing time by ~30% for standard input profiles.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Senior Software Engineer</h3>
+            <p>Luxoft India Pvt Ltd</p>
+            <time>Mar 2023 - Feb 2024</time>
+          </div>
+          <ul>
+            <li>Centralized logging configuration to simplify operations and debugging for engineering teams.</li>
+            <li>Migrated legacy services to a cloud-based platform using Java, Docker, and OpenShift.</li>
+            <li>Implemented API gateway capabilities with Spring Cloud Gateway for edge routing.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Software Development Engineer 3</h3>
+            <p>PayPal India Pvt Ltd</p>
+            <time>May 2022 - Mar 2023</time>
+          </div>
+          <ul>
+            <li>Built daemon services to process credit lifecycle events across Checkout and Payments domains.</li>
+            <li>Delivered cross-domain payment features under tight timelines through coordinated engineering execution.</li>
+            <li>Received a GEM on-the-spot award for high-impact delivery and ownership.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Senior Software Engineer</h3>
+            <p>Altimetrik India Pvt Ltd</p>
+            <time>May 2019 - May 2022</time>
+          </div>
+          <ul>
+            <li>Led backend design and implementation for AU/CITI Co-Branded Card services at PayPal.</li>
+            <li>Built partner-facing external services and eligibility rules in credit and identity domains.</li>
+            <li>Recognized with GEM award for technical contributions and execution quality.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Java Developer</h3>
+            <p>IVTL Infoview Technologies Pvt Ltd</p>
+            <time>Jul 2016 - May 2019</time>
+          </div>
+          <ul>
+            <li>Developed internal tools for coding standards validation and engineering productivity.</li>
+            <li>Built storage-drive functionality for the internal CORTEX development framework.</li>
+            <li>Contributed actively to core backend development and team collaboration.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p>Selected projects with clear backend ownership.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Rakuten GORA - Swing Analysis</h3>
+            <p>Owned backend architecture for Swing Analysis in the Rakuten GORA app, spanning video ingestion, ML team pipeline orchestration, eventing, and resilient multi-cloud result delivery for 10k+ videos with ~99% valid-input success.</p>
+            <p class="stack">Stack: Java, Kotlin, Spring Boot, Debezium, FFmpeg/JPEG (C + Java wrapper), Azure Blob Storage, Event Hubs, Event Grid, Azure MySQL, ACR, AKS, Argo Workflows, Argo CD, Helm, GCP integrations</p>
+            <div class="project-links">
+              <a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener" aria-label="Rakuten corporate website">Company</a>
+              <a href="swing-analysis.html" aria-label="Swing Analysis case study">Case Study</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Legacy Credit Risk Cloud Migration</h3>
+            <p>Migrated SCB credit risk platform services from legacy environments to cloud-native deployment.</p>
+            <p class="stack">Stack: Java, Spring Boot, PostgreSQL, Kafka, Docker, Red Hat OpenShift, ELK</p>
+            <div class="project-links">
+              <a href="https://www.luxoft.com/" target="_blank" rel="noopener" aria-label="Luxoft website">Company</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>AS2 Order FI Update</h3>
+            <p>Implemented FI update flows for open orders to support card PAN change handling in payments.</p>
+            <p class="stack">Stack: Java, Microservices, Payments Domain Services</p>
+            <div class="project-links">
+              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">Company</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>AU/CITI Co-Branded Card Lifecycle</h3>
+            <p>Shipped and later sunset major card platform capabilities during the CITI migration program.</p>
+            <p class="stack">Stack: Java, Node.js, React, GraphQL, CloudEvents, AMQ, PostgreSQL</p>
+            <div class="project-links">
+              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">Company</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="highlights">
+        <div class="section-head">
+          <h2>Technical Highlights</h2>
+          <p>Architecture-level responsibilities from Swing Analysis delivery.</p>
+        </div>
+        <div class="highlights-grid">
+          <article>
+            <h3>Ingestion Pipeline</h3>
+            <p>Handled video uploads, storage events, and app-store/webhook listeners across platform modules.</p>
+          </article>
+          <article>
+            <h3>ML Team Orchestration</h3>
+            <p>Coordinated request/response flows to the ML team multi-model analysis pipeline and result handoff.</p>
+          </article>
+          <article>
+            <h3>Media Processing</h3>
+            <p>Integrated C-based FFmpeg/JPEG processing wrapped in Java for frame extraction and analysis preparation.</p>
+          </article>
+          <article>
+            <h3>Release Engineering</h3>
+            <p>Executed controlled Argo Workflows and Argo CD sync processes with Helm and shared values management.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>Core strengths for backend and platform roles.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article>
+            <h3>Languages</h3>
+            <p>Java, Kotlin, SQL</p>
+          </article>
+          <article>
+            <h3>Messaging & Data</h3>
+            <p>Kafka, Event Hubs, Debezium CDC, Redis, MySQL, PostgreSQL</p>
+          </article>
+          <article>
+            <h3>Backend</h3>
+            <p>Spring Boot, Spring Cloud Gateway, Microservices, REST APIs, JOOQ, Design Patterns</p>
+          </article>
+          <article>
+            <h3>Cloud & DevOps</h3>
+            <p>Azure, AWS, Docker, Kubernetes (AKS/OCP), Argo Workflows, Argo CD, Helm, ACR</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Education & Certifications</h2>
+        </div>
+        <div class="edu-card">
+          <p><strong>B.E. Computer Science and Engineering</strong> - Adhiyamaan College of Engineering (Jun 2012 - May 2016)</p>
+          <p>Hosur, India</p>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Open to senior backend and platform engineering opportunities.</p>
+        </div>
+        <a class="btn primary" href="mailto:harikrishnabhuvaneshwari@yahoo.com">Email Me</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><span id="year"></span> Hari Krishna Prakash. Built with HTML, CSS, and JavaScript.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

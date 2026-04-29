@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swing Analysis Case Study | Hari Krishna Prakash</title>
+    <meta
+      name="description"
+      content="Case study of Swing Analysis backend architecture and delivery ownership by Hari Krishna Prakash."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">HARI.dev</a>
+        <nav>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero reveal">
+        <p class="kicker">Case Study | Rakuten GORA</p>
+        <h1>Swing Analysis</h1>
+        <p class="lede">
+          Production backend delivery for a video-driven user feature, including ingestion,
+          ML-team orchestration, media processing, release control, and multi-cloud resiliency.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html">Back to Portfolio</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Outcomes</h2>
+        </div>
+        <div class="impact-strip">
+          <article>
+            <h3>10k+</h3>
+            <p>Videos processed</p>
+          </article>
+          <article>
+            <h3>~99%</h3>
+            <p>Valid-input success</p>
+          </article>
+          <article>
+            <h3>~30%</h3>
+            <p>Processing-time reduction</p>
+          </article>
+          <article>
+            <h3>100%</h3>
+            <p>Release reliability</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Problem</h2>
+        </div>
+        <div class="edu-card">
+          <p>
+            Swing Analysis launched as a net-new feature in the Rakuten GORA app. The backend
+            platform needed to ingest and process user videos, coordinate requests to an external
+            ML team pipeline, and return reliable results at production scale.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Architecture</h2>
+        </div>
+        <div class="highlights-grid">
+          <article>
+            <h3>API + Event Ingestion</h3>
+            <p>API, batch, queue, and webhook listeners (App Store and Play Store integration flows).</p>
+          </article>
+          <article>
+            <h3>Storage + Eventing</h3>
+            <p>Azure Blob Storage, Event Hubs topics, Event Grid antivirus events, and Azure MySQL.</p>
+          </article>
+          <article>
+            <h3>Media Pipeline</h3>
+            <p>C-based FFmpeg/JPEG processors wrapped by Java for video handling and frame extraction.</p>
+          </article>
+          <article>
+            <h3>Deployment</h3>
+            <p>AKS + Rakuten One Cloud, Azure Front Door routing, Argo Workflows, Argo CD, and Helm.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Ownership</h2>
+        </div>
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Backend Platform Ownership</h3>
+            <p>End-to-end delivery scope</p>
+          </div>
+          <ul>
+            <li>Owned backend integration across ingestion, orchestration, and result delivery paths.</li>
+            <li>Engineered multi-cloud resiliency and routing behavior for production stability.</li>
+            <li>Executed controlled release workflows with revision/image parameterized promotions.</li>
+            <li>Created and modified Helm chart values for environment-specific deployment needs.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><span id="year"></span> Hari Krishna Prakash. Built with HTML, CSS, and JavaScript.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
