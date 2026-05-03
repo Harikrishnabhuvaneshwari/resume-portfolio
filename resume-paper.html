@@ -63,17 +63,19 @@
   }
 
   .header-right {
-    flex: 1;
+    flex: 1.5; /* Give more space to contact info */
     text-align: right;
     font-size: 8.5pt;
+    word-break: break-all;
   }
 
   .contact-item {
     margin-bottom: 2pt;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     gap: 6pt;
+    line-height: 1.2;
   }
 
   .contact-item i {
@@ -85,6 +87,7 @@
     font-size: 9.5pt;
     color: #444;
     line-height: 1.5;
+    overflow-wrap: break-word;
   }
 
   /* Section Headers */
@@ -195,6 +198,7 @@
     margin-bottom: 3pt;
     font-size: 9.5pt;
     text-align: left;
+    overflow-wrap: break-word;
   }
 
   .achievement-label {
@@ -230,9 +234,10 @@
     </div>
     <div class="header-right">
       <div class="contact-item">harikrishnabhuvaneshwari@yahoo.com <span>&#9993;</span></div>
+      <div class="contact-item">github.com/Harikrishnabhuvaneshwari <span>&#128279;</span></div>
+      <div class="contact-item">linkedin.com/in/harikrishnaprakash <span>&#128279;</span></div>
       <div class="contact-item">+817091801756 <span>&#128222;</span></div>
       <div class="contact-item">Tokyo, Japan <span>&#128205;</span></div>
-      <div class="contact-item">linkedin.com/in/harikrishnaprakash <span>&#128279;</span></div>
     </div>
   </div>
 
