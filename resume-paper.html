@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hari Krishna Prakash - Resume</title>
+<style>
+  :root {
+    --primary: #28c2a0;
+    --text: #333333;
+    --light-text: #666666;
+    --bg: #ffffff;
+    --line: #eeeeee;
+  }
+  
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; color-adjust: exact; }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    font-size: 9.5pt;
+    line-height: 1.4;
+    margin: 0;
+    padding: 30pt 0;
+    background: #f0f2f5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 12mm 18mm;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10pt;
+    border-top: 4pt solid var(--primary);
+    padding-top: 10pt;
+  }
+
+  .header-left {
+    flex: 2;
+  }
+
+  .header-left h1 {
+    font-size: 26pt;
+    margin: 0;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .header-left .title {
+    font-size: 13pt;
+    color: var(--primary);
+    margin-top: 2pt;
+    font-weight: 500;
+  }
+
+  .header-right {
+    flex: 1;
+    text-align: right;
+    font-size: 8.5pt;
+  }
+
+  .contact-item {
+    margin-bottom: 2pt;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6pt;
+  }
+
+  .contact-item i {
+    color: var(--primary);
+  }
+
+  .summary {
+    margin-bottom: 12pt;
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* Section Headers */
+  h2 {
+    font-size: 12pt;
+    color: #000;
+    text-transform: uppercase;
+    border-bottom: 1.5pt solid var(--primary);
+    padding-bottom: 2pt;
+    margin: 15pt 0 10pt 0;
+    font-weight: 700;
+    letter-spacing: 0.5pt;
+  }
+
+  /* Skills Grid & Chips */
+  .skills-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4pt;
+    margin-bottom: 15pt;
+  }
+
+  .skill-chip {
+    background: var(--primary);
+    color: white;
+    padding: 1.5pt 6pt;
+    border-radius: 4pt;
+    font-size: 8.5pt;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* Timeline Styling */
+  .timeline {
+    position: relative;
+    padding-left: 20pt;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 4.5pt;
+    top: 5pt;
+    bottom: 5pt;
+    width: 1.5pt;
+    background: var(--primary);
+    opacity: 0.3;
+  }
+
+  .experience-item {
+    position: relative;
+    margin-bottom: 15pt;
+    page-break-inside: auto; /* Allow items to split across pages */
+  }
+
+  .exp-header, .exp-company, .exp-meta, .exp-desc, .achievement-label {
+    page-break-after: avoid; /* Keep headers with content */
+  }
+
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: -20pt;
+    top: 4pt;
+    width: 10pt;
+    height: 10pt;
+    background: white;
+    border: 2pt solid var(--primary);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .exp-title {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #000;
+  }
+
+  .exp-company {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #333;
+    margin-bottom: 1pt;
+  }
+
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8.5pt;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 3pt;
+  }
+
+  .exp-desc {
+    font-style: italic;
+    font-size: 8.5pt;
+    color: #777;
+    margin-bottom: 4pt;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 12pt;
+  }
+
+  li {
+    margin-bottom: 3pt;
+    font-size: 9.5pt;
+    text-align: left;
+  }
+
+  .achievement-label {
+    font-size: 8pt;
+    color: var(--primary);
+    font-style: italic;
+    margin-top: 2pt;
+    display: block;
+  }
+
+  @media print {
+    @page { 
+      margin: 15mm 18mm; 
+      size: A4 portrait; 
+    }
+    body { padding: 0; background: white; }
+    .page { 
+      margin: 0; 
+      padding: 0; 
+      box-shadow: none; 
+      width: 100%; 
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  
+  <div class="header">
+    <div class="header-left">
+      <h1>Hari Krishna Prakash</h1>
+      <div class="title">Senior Applications Engineer & Backend Architect</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item">harikrishnabhuvaneshwari@yahoo.com <span>&#9993;</span></div>
+      <div class="contact-item">+817091801756 <span>&#128222;</span></div>
+      <div class="contact-item">Tokyo, Japan <span>&#128205;</span></div>
+      <div class="contact-item">linkedin.com/in/harikrishnaprakash <span>&#128279;</span></div>
+    </div>
+  </div>
+
+  <div class="summary">
+    Backend Architect with 10+ years of experience designing distributed systems, high-throughput ingestion pipelines, and resilient multi-cloud services. Specialized in Event-Driven Architecture (EDA), Change Data Capture (CDC), and engineering high-impact internal productivity tools and AI/MCP integrations.
+  </div>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-group">
+      <div class="skill-chip">Agile / Scrum</div>
+      <div class="skill-chip">Java [GraalVM]</div>
+      <div class="skill-chip">Kotlin</div>
+      <div class="skill-chip">Spring Boot / Security / Batch</div>
+      <div class="skill-chip">JOOQ</div>
+      <div class="skill-chip">Microservices</div>
+      <div class="skill-chip">Kafka</div>
+      <div class="skill-chip">Debezium (CDC)</div>
+      <div class="skill-chip">Azure (AKS, Front Door, Event Hubs, ACR)</div>
+      <div class="skill-chip">Kubernetes / OpenShift</div>
+      <div class="skill-chip">Terraform</div>
+      <div class="skill-chip">Argo CD / Workflows</div>
+      <div class="skill-chip">PostgreSQL / MySQL / Redis</div>
+      <div class="skill-chip">Prometheus / Grafana</div>
+      <div class="skill-chip">OpenTelemetry / APM</div>
+      <div class="skill-chip">ELK Stack</div>
+      <div class="skill-chip">Maven / Gradle</div>
+      <div class="skill-chip">TestContainers / Gatling</div>
+      <div class="skill-chip">Swagger / OpenAPI</div>
+      <div class="skill-chip">MCP Servers</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      
+      <div class="experience-item">
+        <div class="exp-title">Senior Applications Engineer</div>
+        <div class="exp-company">Rakuten Group</div>
+        <div class="exp-meta">
+          <span>02/2024 &ndash; Present</span>
+          <span>Tokyo, Japan</span>
+        </div>
+        <div class="exp-desc">Multinational conglomerate offering e-commerce, fintech, and digital content services.</div>
+        <span class="achievement-label">Achievements/Tasks</span>
+        <ul>
+          <li>Architected the <strong>Swing Analysis</strong> platform; implemented an Event-Driven Architecture (EDA) using <strong>Debezium CDC</strong> to capture database changes for real-time ML orchestration.</li>
+          <li>Engineered multi-cloud resiliency with <strong>Azure Front Door</strong>, load-balancing across AKS and Rakuten One Cloud routing paths.</li>
+          <li>Integrated a C-based <strong>FFmpeg/JPEG</strong> media processing pipeline wrapped in Java, sustaining 10k+ videos with ~99% success and reducing processing time by ~30%.</li>
+          <li>Managed automated releases via <strong>Argo Workflows</strong>, Helm charts, and Argo CD, maintaining 100% deployment reliability.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="exp-title">Senior Software Engineer</div>
+        <div class="exp-company">Luxoft India Pvt Ltd</div>
+        <div class="exp-meta">
+          <span>03/2023 &ndash; 02/2024</span>
+          <span>Bengaluru, India</span>
+        </div>
+        <div class="exp-desc">Digital transformation company delivering innovative solutions to global banking clients.</div>
+        <span class="achievement-label">Achievements/Tasks</span>
+        <ul>
+          <li>Migrated legacy credit risk platform services to cloud-native architecture using <strong>Docker</strong> and <strong>Red Hat OpenShift</strong>.</li>
+          <li>Centralized logging and monitoring utilizing the <strong>ELK stack</strong> and <strong>Prometheus/Grafana</strong> to accelerate cross-team debugging.</li>
+          <li>Implemented high-throughput edge routing and API security using <strong>Spring Cloud Gateway</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="exp-title">Software Development Engineer 3</div>
+        <div class="exp-company">PayPal India Pvt Ltd</div>
+        <div class="exp-meta">
+          <span>05/2022 &ndash; 03/2023</span>
+          <span>Chennai, India</span>
+        </div>
+        <div class="exp-desc">Global technology platform for digital payments and credit lifecycle management.</div>
+        <span class="achievement-label">Achievements/Tasks</span>
+        <ul>
+          <li>Resolved critical token-invalidation race conditions by engineering a <strong>Distributed State Management</strong> solution with a "Request-in-Flight" locking pattern.</li>
+          <li>Built high-resiliency daemon services for processing <strong>Credit Lifecycle</strong> events across Checkout and Payments domains.</li>
+          <li>Recognized with <strong>GEM Award</strong> for exceptional delivery and cross-domain technical coordination.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="exp-title">Senior Software Engineer</div>
+        <div class="exp-company">Altimetrik India Pvt Ltd</div>
+        <div class="exp-meta">
+          <span>05/2019 &ndash; 05/2022</span>
+          <span>Chennai, India</span>
+        </div>
+        <ul>
+          <li>Led backend implementation for AU/CITI Co-Branded Card services using <strong>Java</strong> and <strong>Spring Boot</strong>.</li>
+          <li>Designed partner-facing external services and complex eligibility rulesets in the credit domain.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="exp-title">Java Developer</div>
+        <div class="exp-company">IVTL Infoview Technologies Pvt Ltd</div>
+        <div class="exp-meta">
+          <span>07/2016 &ndash; 05/2019</span>
+          <span>Chennai, India</span>
+        </div>
+        <ul>
+          <li>Developed internal tools for coding standards validation and engineering productivity frameworks.</li>
+          <li>Built core storage-drive functionality for the internal <strong>CORTEX</strong> framework.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Innovation & AI</h2>
+    <ul>
+      <li><strong>AI/MCP Orchestration:</strong> Engineered Model Context Protocol (MCP) servers for secure LLM interfacing with Confluence, Jira, and Kibana.</li>
+      <li><strong>Platform Automation:</strong> Built custom automation skills for Kubernetes and internal observability stacks (Prometheus/Grafana).</li>
+      <li><strong>Knowledge Engineering:</strong> Integrated context-capture pipelines (Obsidian/Second Brain) for AI agent context preservation.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

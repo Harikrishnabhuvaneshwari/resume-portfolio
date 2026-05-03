@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hari Krishna Prakash | Technical Portfolio</title>
+    <title>Hari Krishna Prakash | Senior Applications Engineer & Architect</title>
     <meta
       name="description"
-      content="Technical portfolio and resume website for Hari Krishna Prakash."
+      content="Senior Applications Engineer & Backend Architect specializing in distributed systems and resilient multi-cloud services."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="#top" class="brand">HARI.dev</a>
+        <a href="#top" class="brand">HARI.arch</a>
         <nav>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
@@ -33,12 +33,11 @@
 
     <main id="top" class="container">
       <section class="hero reveal">
-        <p class="kicker">Senior Applications Engineer | Technical Portfolio</p>
+        <p class="kicker">Senior Applications Engineer & Backend Architect</p>
         <h1>Hari Krishna Prakash</h1>
         <p class="lede">
-          Senior backend engineer with 10+ years of experience delivering distributed systems,
-          production-grade platform integrations, and resilient multi-cloud services across
-          fintech and digital commerce domains.
+          Senior Applications Engineer with 10+ years of experience and a focus on Backend Architecture—designing distributed systems,
+          high-throughput ingestion pipelines, and resilient multi-cloud services.
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View Projects</a>
@@ -70,15 +69,15 @@
 
         <article class="timeline-item">
           <div class="timeline-meta">
-            <h3>Applications Engineer</h3>
+            <h3>Senior Applications Engineer</h3>
             <p>Rakuten Group</p>
             <time>Feb 2024 - Present</time>
           </div>
           <ul>
-            <li>Delivered a production-grade Swing Analysis capability in the Rakuten GORA app by owning the backend platform that ingests user videos, orchestrates analysis requests to the ML team's multi-model pipeline, and returns results through resilient multi-cloud services.</li>
+            <li>Architected a production-grade Swing Analysis platform in the Rakuten GORA app; implemented an Event-Driven Architecture (EDA) using Debezium CDC to capture database changes, triggering downstream ML model orchestration and resilient multi-cloud delivery.</li>
             <li>Engineered multi-cloud resiliency with Azure Front Door and load-balancing across AKS and Rakuten One Cloud routing paths.</li>
-            <li>Managed controlled releases through manually triggered Argo Workflows (revision/image parameters), shared values.yaml updates, Argo CD syncs, and Helm chart customization; maintained 100% release reliability with multiple milestones delivered ahead of schedule.</li>
-            <li>Integrated a C-based FFmpeg/JPEG media processing pipeline wrapped in Java for video analysis and frame extraction, sustaining 10k+ videos with ~99% valid-input success and reducing average processing time by ~30% for standard input profiles.</li>
+            <li>Managed controlled releases through manually triggered Argo Workflows (revision/image parameters), shared values.yaml updates, Argo CD syncs, and Helm chart customization; maintained 100% release reliability.</li>
+            <li>Integrated a C-based FFmpeg/JPEG media processing pipeline wrapped in Java for video analysis and frame extraction, sustaining 10k+ videos with ~99% valid-input success.</li>
           </ul>
         </article>
 
@@ -102,9 +101,9 @@
             <time>May 2022 - Mar 2023</time>
           </div>
           <ul>
-            <li>Built daemon services to process credit lifecycle events across Checkout and Payments domains.</li>
-            <li>Delivered cross-domain payment features under tight timelines through coordinated engineering execution.</li>
-            <li>Received a GEM on-the-spot award for high-impact delivery and ownership.</li>
+            <li>Engineered a distributed state management solution for the AU/Citi credit lifecycle to resolve a critical token-invalidation race condition; implemented a "Request-in-Flight" locking pattern using a centralized cache with retry-with-backoff logic, ensuring 100% transaction consistency for concurrent user requests.</li>
+            <li>Built resilient daemon services to process credit lifecycle events across Checkout and Payments domains, handling high-volume event streams.</li>
+            <li>Delivered cross-domain payment features under tight timelines through coordinated engineering execution and received a GEM on-the-spot award.</li>
           </ul>
         </article>
 
@@ -147,7 +146,7 @@
             <p>Owned backend architecture for Swing Analysis in the Rakuten GORA app, spanning video ingestion, ML team pipeline orchestration, eventing, and resilient multi-cloud result delivery for 10k+ videos with ~99% valid-input success.</p>
             <p class="stack">Stack: Java, Kotlin, Spring Boot, Debezium, FFmpeg/JPEG (C + Java wrapper), Azure Blob Storage, Event Hubs, Event Grid, Azure MySQL, ACR, AKS, Argo Workflows, Argo CD, Helm, GCP integrations</p>
             <div class="project-links">
-              <a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener" aria-label="Rakuten corporate website">Company</a>
+              <a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener" aria-label="Rakuten corporate website">Rakuten</a>
               <a href="swing-analysis.html" aria-label="Swing Analysis case study">Case Study</a>
             </div>
           </article>
@@ -157,7 +156,7 @@
             <p>Migrated SCB credit risk platform services from legacy environments to cloud-native deployment.</p>
             <p class="stack">Stack: Java, Spring Boot, PostgreSQL, Kafka, Docker, Red Hat OpenShift, ELK</p>
             <div class="project-links">
-              <a href="https://www.luxoft.com/" target="_blank" rel="noopener" aria-label="Luxoft website">Company</a>
+              <a href="https://www.luxoft.com/" target="_blank" rel="noopener" aria-label="Luxoft website">Luxoft</a>
             </div>
           </article>
 
@@ -166,16 +165,16 @@
             <p>Implemented FI update flows for open orders to support card PAN change handling in payments.</p>
             <p class="stack">Stack: Java, Microservices, Payments Domain Services</p>
             <div class="project-links">
-              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">Company</a>
+              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">PayPal</a>
             </div>
           </article>
 
           <article class="project-card">
             <h3>AU/CITI Co-Branded Card Lifecycle</h3>
             <p>Shipped and later sunset major card platform capabilities during the CITI migration program.</p>
-            <p class="stack">Stack: Java, Node.js, React, GraphQL, CloudEvents, AMQ, PostgreSQL</p>
+            <p class="stack">Stack: Java, React, GraphQL, CloudEvents, AMQ, PostgreSQL</p>
             <div class="project-links">
-              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">Company</a>
+              <a href="https://www.paypal.com/" target="_blank" rel="noopener" aria-label="PayPal website">PayPal</a>
             </div>
           </article>
         </div>
@@ -206,28 +205,53 @@
         </div>
       </section>
 
+      <section class="section reveal" id="innovation">
+        <div class="section-head">
+          <h2>Technical Innovation</h2>
+          <p>Architecting "Force Multipliers" to enhance engineering productivity and AI-assisted workflows.</p>
+        </div>
+        <div class="highlights-grid">
+          <article>
+            <h3>AI/MCP Orchestration</h3>
+            <p>Engineered specialized Model Context Protocol (MCP) servers to allow LLMs to safely interface with Confluence, Jira, and Kibana, streamlining cross-team knowledge retrieval.</p>
+          </article>
+          <article>
+            <h3>Platform Automation</h3>
+            <p>Developed custom automation skills for Kubernetes and internal observability stacks, reducing manual toil for infrastructure and monitoring tasks.</p>
+          </article>
+          <article>
+            <h3>Knowledge Engineering</h3>
+            <p>Built integrated context-capture pipelines (Obsidian/Second Brain) for AI agents to preserve technical context and accelerate future problem-solving cycles.</p>
+          </article>
+          <article>
+            <h3>Departmental Tooling</h3>
+            <p>Designed and maintained internal productivity frameworks and coding standard validators adopted across engineering departments.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="skills" class="section reveal">
         <div class="section-head">
           <h2>Skills</h2>
-          <p>Core strengths for backend and platform roles.</p>
+          <p>Architectural mastery across distributed systems, cloud infrastructure, and observability.</p>
         </div>
 
         <div class="skills-grid">
           <article>
-            <h3>Languages</h3>
-            <p>Java, Kotlin, SQL</p>
+            <h3>Backend & Languages</h3>
+            <p>Java [GraalVM], Kotlin, Spring Boot / Security / Batch, JOOQ, GraphQL / REST, SQL, Debezium (CDC)</p>
           </article>
           <article>
-            <h3>Messaging & Data</h3>
-            <p>Kafka, Event Hubs, Debezium CDC, Redis, MySQL, PostgreSQL</p>
+            <h3>Cloud & Infrastructure</h3>
+            <p>Azure (AKS, Front Door, Event Hubs, ACR), AWS, Terraform, Kubernetes / OpenShift, Helm, Argo CD</p>
           </article>
           <article>
-            <h3>Backend</h3>
-            <p>Spring Boot, Spring Cloud Gateway, Microservices, REST APIs, JOOQ, Design Patterns</p>
+            <h3>Observability & DevOps</h3>
+            <p>OpenTelemetry / APM, Prometheus, Grafana, ELK, Jenkins, Maven / Gradle, TestContainers / Gatling</p>
           </article>
           <article>
-            <h3>Cloud & DevOps</h3>
-            <p>Azure, AWS, Docker, Kubernetes (AKS/OCP), Argo Workflows, Argo CD, Helm, ACR</p>
+            <h3>Engineering Leadership</h3>
+            <p>Agile / Scrum, Distributed Systems Design, MCP Servers / AI Tooling, Microservices Patterns</p>
           </article>
         </div>
       </section>

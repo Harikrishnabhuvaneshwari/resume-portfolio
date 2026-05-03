@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swing Analysis Case Study | Hari Krishna Prakash</title>
+    <title>Swing Analysis Architecture | Hari Krishna Prakash</title>
     <meta
       name="description"
-      content="Case study of Swing Analysis backend architecture and delivery ownership by Hari Krishna Prakash."
+      content="Architecture case study of the Swing Analysis backend delivery by Hari Krishna Prakash."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="index.html" class="brand">HARI.dev</a>
+        <a href="index.html" class="brand">HARI.arch</a>
         <nav>
           <a href="index.html#experience">Experience</a>
           <a href="index.html#projects">Projects</a>
@@ -85,11 +85,35 @@
       <section class="section reveal">
         <div class="section-head">
           <h2>Architecture</h2>
+          <p>Abstracted view of the Event-Driven Design and Multi-Cloud pipeline.</p>
         </div>
+
+        <div class="arch-diagram">
+          <div class="arch-box">
+            <h4>Ingestion Layer</h4>
+            <p>Video Uploads & Metadata Storage (Azure MySQL)</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">
+            <h4>CDC Engine</h4>
+            <p>Debezium capturing Binlogs to Event Hubs</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">
+            <h4>Orchestrator</h4>
+            <p>ML Pipeline coordination & Media Processing (FFmpeg)</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">
+            <h4>Delivery</h4>
+            <p>Resilient Routing via Azure Front Door & AKS</p>
+          </div>
+        </div>
+
         <div class="highlights-grid">
           <article>
-            <h3>API + Event Ingestion</h3>
-            <p>API, batch, queue, and webhook listeners (App Store and Play Store integration flows).</p>
+            <h3>EDA + CDC</h3>
+            <p>Event-Driven Architecture using Debezium CDC to capture MySQL binlogs, ensuring reliable event propagation to the ML pipeline.</p>
           </article>
           <article>
             <h3>Storage + Eventing</h3>
