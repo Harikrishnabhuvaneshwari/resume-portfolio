@@ -10,16 +10,20 @@ const observer = new IntersectionObserver(
     for (const entry of entries) {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
+        observer.unobserve(entry.target);
       }
     }
   },
   {
-    threshold: 0.15,
+    threshold: 0, // Trigger immediately as soon as a single pixel enters
+    rootMargin: "0px 0px 50px 0px" // Trigger 50px BEFORE it even enters the view
   }
 );
 
 document.querySelectorAll(".reveal").forEach((node, index) => {
-  node.style.transitionDelay = `${index * 80}ms`;
+  // Cap the maximum delay to 400ms so items at the bottom don't lag
+  const delay = Math.min(index * 60, 400);
+  node.style.transitionDelay = `${delay}ms`;
   observer.observe(node);
 });
 
