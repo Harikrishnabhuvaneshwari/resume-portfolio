@@ -41,8 +41,8 @@
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="swing-analysis.html">Read Case Study</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          <a class="btn" href="#projects">View Case Studies</a>
+          <a class="btn" href="resume-paper.html" target="_blank">View Resume (Print-Ready)</a>
         </div>
         <ul class="meta-list">
           <li><span>Location</span><strong>Tokyo, Japan</strong></li>
@@ -75,6 +75,7 @@
           </div>
           <ul>
             <li>Architected a production-grade Swing Analysis platform in the Rakuten GORA app; implemented an Event-Driven Architecture (EDA) using Debezium CDC to capture database changes, triggering downstream ML model orchestration and resilient multi-cloud delivery.</li>
+            <li>Engineered a 'Watchdog' resiliency service to mitigate silent failures in the Azure Malware Scanning pipeline; implemented a background 'Sweeper' to identify and auto-recover transactions stuck in scanning states, ensuring 100% processing completion.</li>
             <li>Engineered multi-cloud resiliency with Azure Front Door and load-balancing across AKS and Rakuten One Cloud routing paths.</li>
             <li>Managed controlled releases through manually triggered Argo Workflows (revision/image parameters), shared values.yaml updates, Argo CD syncs, and Helm chart customization; maintained 100% release reliability.</li>
             <li>Integrated a C-based FFmpeg/JPEG media processing pipeline wrapped in Java for video analysis and frame extraction, sustaining 10k+ videos with ~99% valid-input success.</li>
@@ -147,7 +148,8 @@
             <p class="stack">Stack: Java, Kotlin, Spring Boot, Debezium, FFmpeg/JPEG (C + Java wrapper), Azure Blob Storage, Event Hubs, Event Grid, Azure MySQL, ACR, AKS, Argo Workflows, Argo CD, Helm, GCP integrations</p>
             <div class="project-links">
               <a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener" aria-label="Rakuten corporate website">Rakuten</a>
-              <a href="swing-analysis.html" aria-label="Swing Analysis case study">Case Study</a>
+              <a href="swing-analysis.html" aria-label="Swing Analysis case study">Case Study: Swing Analysis</a>
+              <a href="azure-resiliency.html" aria-label="Watchdog Resiliency case study">Case Study: Cloud Resiliency</a>
             </div>
           </article>
 
@@ -266,12 +268,24 @@
         </div>
       </section>
 
-      <section id="contact" class="section reveal contact">
-        <div class="section-head">
-          <h2>Contact</h2>
-          <p>Open to senior backend and platform engineering opportunities.</p>
+      <section id="contact" class="section reveal">
+        <div class="contact">
+          <div>
+            <h2>Connectivity</h2>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; font-family: var(--mono);">Ready for high-impact architectural challenges.</p>
+          </div>
+          <div class="contact-grid">
+            <a href="mailto:harikrishnabhuvaneshwari@yahoo.com" class="contact-link">
+              <span>Email</span> harikrishnabhuvaneshwari@yahoo.com
+            </a>
+            <a href="https://linkedin.com/in/harikrishnaprakash" target="_blank" rel="noopener" class="contact-link">
+              <span>LinkedIn</span> linkedin.com/in/harikrishnaprakash
+            </a>
+            <a href="https://github.com/Harikrishnabhuvaneshwari" target="_blank" rel="noopener" class="contact-link">
+              <span>GitHub</span> Harikrishnabhuvaneshwari
+            </a>
+          </div>
         </div>
-        <a class="btn primary" href="mailto:harikrishnabhuvaneshwari@yahoo.com">Email Me</a>
       </section>
     </main>
 

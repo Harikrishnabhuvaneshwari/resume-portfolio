@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Resiliency Architecture | Hari Krishna Prakash</title>
+    <meta
+      name="description"
+      content="Architecture case study of the Watchdog Resiliency service for Azure Malware Scanning by Hari Krishna Prakash."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">HARI.arch</a>
+        <nav>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero reveal">
+        <p class="kicker">Case Study | Rakuten Group</p>
+        <h1>Watchdog Resiliency</h1>
+        <p class="lede">
+          Mitigating "Silent Failures" in cloud-native pipelines through automated 
+          recovery and background state synchronization.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html">Back to Portfolio</a>
+          <a class="btn" href="resume-paper.html" target="_blank">Download Resume</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>The Challenge</h2>
+        </div>
+        <div class="edu-card">
+          <p>
+            The video ingestion pipeline relied on <strong>Microsoft Defender for Storage</strong> to scan files for malware before processing. Seldom, random files would be uploaded but <strong>never triggered an event</strong> in the system. 
+          </p>
+          <p style="margin-top: 1rem;">
+            This resulted in "Silent Failures" where transactions were stuck in a permanent "Scanning" state, requiring manual intervention to re-upload files and restart the flow.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Architecture</h2>
+          <p>Abstracted view of the Self-Healing "Watchdog" Pattern.</p>
+        </div>
+
+        <div class="arch-diagram">
+          <div class="arch-box">
+            <h4>Storage Layer</h4>
+            <p>Azure Blob Storage + Defender Antivirus</p>
+          </div>
+          <div class="arch-arrow">?</div>
+          <div class="arch-box">
+            <h4>The Gap</h4>
+            <p>Missing Malware Scan Events</p>
+          </div>
+          <div class="arch-arrow">↺</div>
+          <div class="arch-box" style="border-color: #e3b341;">
+            <h4>Watchdog Service</h4>
+            <p>Background "Sweeper" triggered by CRON</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">
+            <h4>Auto-Recovery</h4>
+            <p>Metadata Patch & Flow Re-Trigger</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>The Solution</h2>
+        </div>
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Watchdog Pattern</h3>
+            <p>Self-Healing Implementation</p>
+          </div>
+          <ul>
+            <li><strong>State Monitoring:</strong> Engineered a background "Sweeper" service that queried the database for any transactions remaining in "Scanning" status beyond a 15-minute SLA.</li>
+            <li><strong>Verification:</strong> The service performed a "Health Check" against Azure Blob Metadata to confirm if the Malware Scan had actually completed but failed to fire an event.</li>
+            <li><strong>Automated Recovery:</strong> Implemented a patch mechanism to manually inject the missing state change, re-triggering the downstream Event Hubs logic without user re-uploads.</li>
+            <li><strong>Outcome:</strong> Achieved 100% processing reliability and eliminated manual support tickets for "stuck" video analysis.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><span id="year"></span> Hari Krishna Prakash. Built with HTML, CSS, and JavaScript.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
