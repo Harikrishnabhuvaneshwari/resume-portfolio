@@ -138,18 +138,19 @@
     background: var(--primary);
     opacity: 0.3;
   }
+.experience-item {
+  position: relative;
+  margin-bottom: 15pt;
+  page-break-inside: auto;
+}
 
-  .experience-item {
-    position: relative;
-    margin-bottom: 15pt;
-    page-break-inside: auto; /* Allow items to split across pages */
-  }
+.exp-header-wrap {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 2pt;
+}
 
-  .exp-header, .exp-company, .exp-meta, .exp-desc, .achievement-label {
-    page-break-after: avoid; /* Keep headers with content */
-  }
-
-  .experience-item::before {
+.experience-item::before {
     content: '';
     position: absolute;
     left: -20pt;
@@ -201,6 +202,8 @@
     font-size: 9.5pt;
     text-align: left;
     overflow-wrap: break-word;
+    orphans: 2;
+    widows: 2;
   }
 
   .achievement-label {
@@ -278,14 +281,16 @@
     <div class="timeline">
       
       <div class="experience-item">
-        <div class="exp-title">Senior Applications Engineer</div>
-        <div class="exp-company">Rakuten Group</div>
-        <div class="exp-meta">
-          <span>Feb 2024 &ndash; Present</span>
-          <span>Tokyo, Japan</span>
+        <div class="exp-header-wrap">
+          <div class="exp-title">Senior Applications Engineer</div>
+          <div class="exp-company">Rakuten Group</div>
+          <div class="exp-meta">
+            <span>Feb 2024 &ndash; Present</span>
+            <span>Tokyo, Japan</span>
+          </div>
+          <div class="exp-desc">Multinational conglomerate offering e-commerce, fintech, and digital content services.</div>
+          <span class="achievement-label">Achievements/Tasks</span>
         </div>
-        <div class="exp-desc">Multinational conglomerate offering e-commerce, fintech, and digital content services.</div>
-        <span class="achievement-label">Achievements/Tasks</span>
         <ul>
           <li>Architected the <strong>Swing Analysis</strong> platform for the <strong>Rakuten GORA</strong> app; implemented an Event-Driven Architecture (EDA) using <strong>Debezium CDC</strong> to capture database changes for real-time ML orchestration.</li>
           <li>Engineered a <strong>Watchdog Resiliency Service</strong> to mitigate silent failures in the Azure Malware Scanning pipeline; implemented a background "Sweeper" to auto-recover transactions stuck in scanning states, ensuring 100% processing completion.</li>
@@ -296,29 +301,32 @@
       </div>
 
       <div class="experience-item">
-        <div class="exp-title">Senior Software Engineer</div>
-        <div class="exp-company">Luxoft India Pvt Ltd</div>
-        <div class="exp-meta">
-          <span>Mar 2023 &ndash; Feb 2024</span>
-          <span>Bengaluru, India</span>
+        <div class="exp-header-wrap">
+          <div class="exp-title">Senior Software Engineer</div>
+          <div class="exp-company">Luxoft India Pvt Ltd</div>
+          <div class="exp-meta">
+            <span>Mar 2023 &ndash; Feb 2024</span>
+            <span>Bengaluru, India</span>
+          </div>
+          <div class="exp-desc">Digital transformation company delivering innovative solutions to global banking clients.</div>
+          <span class="achievement-label">Achievements/Tasks</span>
         </div>
-        <div class="exp-desc">Digital transformation company delivering innovative solutions to global banking clients.</div>
-        <span class="achievement-label">Achievements/Tasks</span>
         <ul>
           <li>Migrated legacy credit risk platform services to cloud-native architecture using <strong>Docker</strong> and <strong>Red Hat OpenShift</strong>.</li>
           <li>Centralized logging and monitoring utilizing the <strong>ELK stack</strong> and <strong>Prometheus/Grafana</strong> to accelerate cross-team debugging.</li>
           <li>Implemented high-throughput edge routing and API security using <strong>Spring Cloud Gateway</strong>.</li>
         </ul>
-      </div>
-
       <div class="experience-item">
-        <div class="exp-title">Software Development Engineer 3</div>
-        <div class="exp-company">PayPal India Pvt Ltd</div>
-        <div class="exp-meta">
-          <span>May 2022 &ndash; Mar 2023</span>
-          <span>Chennai, India</span>
-        </div>        <div class="exp-desc">Global technology platform for digital payments and credit lifecycle management.</div>
-        <span class="achievement-label">Achievements/Tasks</span>
+        <div class="exp-header-wrap">
+          <div class="exp-title">Software Development Engineer 3</div>
+          <div class="exp-company">PayPal India Pvt Ltd</div>
+          <div class="exp-meta">
+            <span>May 2022 &ndash; Mar 2023</span>
+            <span>Chennai, India</span>
+          </div>
+          <div class="exp-desc">Global technology platform for digital payments and credit lifecycle management.</div>
+          <span class="achievement-label">Achievements/Tasks</span>
+        </div>
         <ul>
           <li>Resolved critical token-invalidation race conditions by engineering a <strong>Distributed State Management</strong> solution with a "Request-in-Flight" locking pattern.</li>
           <li>Built high-resiliency daemon services for processing <strong>Credit Lifecycle</strong> events across Checkout and Payments domains.</li>
@@ -327,11 +335,13 @@
       </div>
 
       <div class="experience-item">
-        <div class="exp-title">Senior Software Engineer</div>
-        <div class="exp-company">Altimetrik India Pvt Ltd</div>
-        <div class="exp-meta">
-          <span>May 2019 &ndash; May 2022</span>
-          <span>Chennai, India</span>
+        <div class="exp-header-wrap">
+          <div class="exp-title">Senior Software Engineer</div>
+          <div class="exp-company">Altimetrik India Pvt Ltd</div>
+          <div class="exp-meta">
+            <span>May 2019 &ndash; May 2022</span>
+            <span>Chennai, India</span>
+          </div>
         </div>
         <ul>
           <li>Led backend implementation for AU/CITI Co-Branded Card services using <strong>Java</strong> and <strong>Spring Boot</strong>.</li>
@@ -340,11 +350,13 @@
       </div>
 
       <div class="experience-item">
-        <div class="exp-title">Java Developer</div>
-        <div class="exp-company">IVTL Infoview Technologies Pvt Ltd</div>
-        <div class="exp-meta">
-          <span>Jul 2016 &ndash; May 2019</span>
-          <span>Chennai, India</span>
+        <div class="exp-header-wrap">
+          <div class="exp-title">Java Developer</div>
+          <div class="exp-company">IVTL Infoview Technologies Pvt Ltd</div>
+          <div class="exp-meta">
+            <span>Jul 2016 &ndash; May 2019</span>
+            <span>Chennai, India</span>
+          </div>
         </div>
         <ul>
           <li>Developed internal tools for coding standards validation and engineering productivity frameworks.</li>
