@@ -383,13 +383,22 @@
     </div>
   </section>
 
-  <footer style="margin-top: 30pt; padding-top: 10pt; border-top: 1pt solid #eee; text-align: center; font-size: 8pt; color: #999; font-family: 'Segoe UI', Roboto, sans-serif;">
-    &copy; <span id="year-paper"></span> Hari Krishna Prakash.
+  <footer style="margin-top: 30pt; padding-top: 10pt; border-top: 1pt solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: #999; font-family: 'Segoe UI', Roboto, sans-serif;">
+    <div>&copy; <span id="year-paper"></span> Hari Krishna Prakash.</div>
+    <div>👀 <span id="stats">...</span> Unique Visitors</div>
   </footer>
 
 </div>
+<script data-goatcounter="https://hkpdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
   document.getElementById("year-paper").textContent = new Date().getFullYear();
+  fetch('https://hkpdev.goatcounter.com/counter//.json')
+    .then(response => response.json())
+    .then(data => {
+      const statsEl = document.getElementById('stats');
+      if (statsEl) statsEl.textContent = data.count;
+    })
+    .catch(err => console.error('Error fetching stats:', err));
 </script>
 </body>
 </html>

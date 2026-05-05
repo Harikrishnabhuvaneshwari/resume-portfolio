@@ -45,3 +45,14 @@ if (window.location.hash) {
     }, 100);
   });
 }
+
+// Fetch GoatCounter stats
+fetch('https://hkpdev.goatcounter.com/counter//.json')
+  .then(response => response.json())
+  .then(data => {
+    const statsEl = document.getElementById('stats');
+    if (statsEl) {
+      statsEl.textContent = data.count;
+    }
+  })
+  .catch(err => console.error('Error fetching stats:', err));
