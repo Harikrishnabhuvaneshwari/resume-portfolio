@@ -48,11 +48,21 @@ if (window.location.hash) {
 
 // Fetch GoatCounter stats
 fetch('https://hkpdev.goatcounter.com/counter/TOTAL.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) throw new Error('Network error or blocked by client');
+    return response.json();
+  })
   .then(data => {
     const statsEl = document.getElementById('stats');
     if (statsEl) {
       statsEl.textContent = data.count;
     }
   })
-  .catch(err => console.error('Error fetching stats:', err));
+  .catch(err => {
+    console.warn('Analytics blocked or failed:', err);
+    // Hide the entire visitor count paragraph if it fails
+    const statsEl = document.getElementById('stats');
+    if (statsEl && statsEl.parentElement) {
+      statsEl.parentElement.style.display = 'none';
+    }
+  });
