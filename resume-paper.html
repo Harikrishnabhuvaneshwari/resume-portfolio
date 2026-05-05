@@ -404,7 +404,7 @@
     .catch(err => {
       console.warn('Analytics blocked or failed:', err);
       const statsEl = document.getElementById('stats');
-      if (statsEl && statsEl.parentElement) statsEl.parentElement.style.display = 'none';
+      if (statsEl) statsEl.textContent = '?';
     });
 </script>
 </body>

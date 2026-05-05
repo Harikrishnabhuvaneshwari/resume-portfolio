@@ -60,9 +60,9 @@ fetch('https://hkpdev.goatcounter.com/counter/TOTAL.json')
   })
   .catch(err => {
     console.warn('Analytics blocked or failed:', err);
-    // Hide the entire visitor count paragraph if it fails
+    // Display '?' if it fails
     const statsEl = document.getElementById('stats');
-    if (statsEl && statsEl.parentElement) {
-      statsEl.parentElement.style.display = 'none';
+    if (statsEl) {
+      statsEl.textContent = '?';
     }
   });
