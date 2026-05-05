@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distributed State Management | Hari Krishna Prakash</title>
+    <meta
+      name="description"
+      content="Architecture case study of Distributed State Management to resolve token-invalidation race conditions at PayPal by Hari Krishna Prakash."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">HARI.dev</a>
+        <nav>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero reveal">
+        <p class="kicker">Case Study | PayPal</p>
+        <h1>Distributed State Management</h1>
+        <p class="lede">
+          Resolving critical token-invalidation race conditions in the AU/Citi credit lifecycle using a "Request-in-Flight" locking pattern.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html">Back to Portfolio</a>
+          <a class="btn" href="resume-paper.html" target="_blank">View Resume (Print-Ready)</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>The Challenge</h2>
+        </div>
+        <div class="edu-card">
+          <p>
+            During the credit lifecycle within the AU/Citi Co-Branded Card domain, backend services were receiving concurrent webhook events and synchronous user requests simultaneously. Because these separate threads attempted to mutate the same transaction state at the same millisecond, they triggered <strong>Race Conditions</strong>.
+          </p>
+          <p style="margin-top: 1rem;">
+            This resulted in critical state collisions, causing <strong>auth tokens to be prematurely invalidated</strong>. Legitimate user requests were failing, creating a highly visible consistency bug in the payments domain where transaction reliability must be absolute.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>Architecture</h2>
+          <p>Abstracted view of the Request-in-Flight Pattern.</p>
+        </div>
+
+        <div class="arch-diagram">
+          <div class="arch-box">
+            <h4>Concurrent Triggers</h4>
+            <p>Webhooks & User Requests</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box" style="border-color: #e3b341;">
+            <h4>Centralized Cache</h4>
+            <p>Distributed Lock (Redis/Memcached)</p>
+          </div>
+          <div class="arch-arrow">↻</div>
+          <div class="arch-box">
+            <h4>Retry & Backoff</h4>
+            <p>Non-blocking Collision Handling</p>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box">
+            <h4>State Mutator</h4>
+            <p>Safe, Sequential Processing</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2>The Solution</h2>
+        </div>
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Request-in-Flight Locking</h3>
+            <p>Concurrency Management</p>
+          </div>
+          <ul>
+            <li><strong>Distributed Locking:</strong> Implemented a "Request-in-Flight" concurrency control mechanism using a Centralized Cache. The first thread to process a transaction acquires an exclusive, short-lived lock for that specific token/ID.</li>
+            <li><strong>Retry-with-Backoff Logic:</strong> Rather than immediately failing concurrent requests when a lock is encountered, implemented an intelligent exponential backoff algorithm. Subsequent threads wait briefly and retry, allowing the initial state mutation to complete smoothly.</li>
+            <li><strong>Idempotency:</strong> Guaranteed that overlapping events for the same credit lifecycle stage were safely serialized, preventing duplicate processing and premature invalidations.</li>
+            <li><strong>Impact:</strong> Completely eradicated the token-invalidation race condition, achieving <strong>100% transaction consistency</strong> for concurrent requests in a high-volume financial environment.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Hari Krishna Prakash.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
