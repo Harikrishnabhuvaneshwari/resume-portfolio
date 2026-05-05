@@ -392,7 +392,7 @@
 <script data-goatcounter="https://hkpdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
   document.getElementById("year-paper").textContent = new Date().getFullYear();
-  fetch('https://hkpdev.goatcounter.com/counter//.json')
+  fetch('https://hkpdev.goatcounter.com/counter/TOTAL.json')
     .then(response => response.json())
     .then(data => {
       const statsEl = document.getElementById('stats');

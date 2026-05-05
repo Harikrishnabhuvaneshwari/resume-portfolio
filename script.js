@@ -47,7 +47,7 @@ if (window.location.hash) {
 }
 
 // Fetch GoatCounter stats
-fetch('https://hkpdev.goatcounter.com/counter//.json')
+fetch('https://hkpdev.goatcounter.com/counter/TOTAL.json')
   .then(response => response.json())
   .then(data => {
     const statsEl = document.getElementById('stats');
