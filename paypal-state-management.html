@@ -50,7 +50,7 @@
         </div>
         <div class="edu-card">
           <p>
-            During the credit lifecycle within the AU/Citi Co-Branded Card domain, backend services were receiving concurrent webhook events and synchronous user requests simultaneously. Because these separate threads attempted to mutate the same transaction state at the same millisecond, they triggered <strong>Race Conditions</strong>.
+            During the credit lifecycle within the AU/Citi Co-Branded Card domain, backend services were receiving concurrent webhook events and synchronous user requests simultaneously. Because these separate threads attempted to mutate the same transaction state at the same millisecond within an event-sourced architecture, they triggered <strong>Race Conditions</strong>.
           </p>
           <p style="margin-top: 1rem;">
             This resulted in critical state collisions, causing <strong>auth tokens to be prematurely invalidated</strong>. Legitimate user requests were failing, creating a highly visible consistency bug in the payments domain where transaction reliability must be absolute.
